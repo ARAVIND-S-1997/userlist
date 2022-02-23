@@ -43,6 +43,9 @@
   justify-content: space-evenly;
 }
 
-.inputfields{
-  display: flex;
+.inputfieldcontainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 2rem;
 }
