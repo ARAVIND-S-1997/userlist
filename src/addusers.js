@@ -29,13 +29,11 @@ export function Adduser({finalData,setfinalData}) {
                 </div>
             </div>
             <div className='inputfieldcontainer'>
-                <div >
                 <TextField className='inputfields' onChange={(event) => setname(event.target.value)} label="Enter the Name" id="Name" variant="filled" />
                 <TextField className='inputfields' onChange={(event) => setemailid(event.target.value)} label="Enter the Email id" id="Email id" variant="filled" />
                 <TextField className='inputfields' onChange={(event) => setrollno(event.target.value)} label="Enter the Roll Number" id="Roll Number" variant="filled" />
                 <TextField className='inputfields' onChange={(event) => setlocation(event.target.value)} label="Enter the Location" id="location" variant="filled" />
                 <Button onClick={userData} variant="contained">Add user</Button>
-                </div>
             </div>
         </div>
     )
