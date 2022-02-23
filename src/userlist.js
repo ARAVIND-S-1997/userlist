@@ -31,10 +31,10 @@ export default function BasicTable({ finalData, setfinalData }) {
                     <TableHead>
                         <TableRow>
                             <TableCell align="centre">Name</TableCell>
-                            <TableCell align="centre">Email id</TableCell>
-                            <TableCell align="centre">Roll no</TableCell>
-                            <TableCell align="centre">Location</TableCell>
-                            <TableCell align="centre">Edit User</TableCell>
+                            <TableCell align="justify">Email id</TableCell>
+                            <TableCell align="justify">Roll no</TableCell>
+                            <TableCell align="justify">Location</TableCell>
+                            <TableCell align="justify">Edit User</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody >
@@ -46,10 +46,10 @@ export default function BasicTable({ finalData, setfinalData }) {
                                 <TableCell component="th" scope="row">
                                     {row.name}
                                 </TableCell>
-                                <TableCell align="centre">{row.emailid}</TableCell>
-                                <TableCell align="centre">{row.rollno}</TableCell>
-                                <TableCell align="centre">{row.location} </TableCell>
-                                <TableCell align="centre">
+                                <TableCell align="justify">{row.emailid}</TableCell>
+                                <TableCell align="justify">{row.rollno}</TableCell>
+                                <TableCell align="justify">{row.location} </TableCell>
+                                <TableCell align="justify">
                                     <IconButton onClick={() => { history.push("/edituser/" + index) }}
                                         color="primary" aria-label="editbutton">
                                         <EditIcon />
