@@ -1,28 +1,26 @@
-
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-export function Adduser() {
+// Adduser
 
-    const [userName, setuserName] = useState([]);
-    const [userEmailid, setuserEmailid] = useState([]);
-    const [userRollno, setuserRollno] = useState([]);
-    const [userLocation, setuserLocation] = useState([]);
-    const [finalData, setfinalData] = useState([]);
-
+export function Adduser({finalData,setfinalData}) {
+    const [name, setname] = useState("");
+    const [emailid, setemailid] = useState("");
+    const [rollno, setrollno] = useState("");
+    const [location,setlocation] = useState("");
+    const history=useHistory();
     const userData = () => {
         const data = {
-            userName,
-            userEmailid,
-            userRollno,
-            userLocation
+            name,
+            emailid,
+            rollno,
+            location
         }
-        return setfinalData(data)
+    setfinalData([...finalData, data]);
+    history.push("/")
     }
-
-    console.log(finalData)
     return (
         <div>
             <div id="table">
@@ -30,12 +28,12 @@ export function Adduser() {
                     <h3>User List Dashboard</h3>
                 </div>
             </div>
-            <div >
-                <div className='adduserfield'>
-                <TextField onChange={(event) => setuserName(event.target.value)} id="Enter the Name" label="Name" variant="filled" />
-                <TextField onChange={(event) => setuserEmailid(event.target.value)} id="Enter the Email id" label="Email id" variant="filled" />
-                <TextField onChange={(event) => setuserRollno(event.target.value)} id="Enter the Roll Number" label="Roll Number" variant="filled" />
-                <TextField onChange={(event) => setuserLocation(event.target.value)} id="Enter the Location" label="location" variant="filled" />
+            <div className='inputfieldcontainer'>
+                <div >
+                <TextField className='inputfields' onChange={(event) => setname(event.target.value)} label="Enter the Name" id="Name" variant="filled" />
+                <TextField className='inputfields' onChange={(event) => setemailid(event.target.value)} label="Enter the Email id" id="Email id" variant="filled" />
+                <TextField className='inputfields' onChange={(event) => setrollno(event.target.value)} label="Enter the Roll Number" id="Roll Number" variant="filled" />
+                <TextField className='inputfields' onChange={(event) => setlocation(event.target.value)} label="Enter the Location" id="location" variant="filled" />
                 <Button onClick={userData} variant="contained">Add user</Button>
                 </div>
             </div>
